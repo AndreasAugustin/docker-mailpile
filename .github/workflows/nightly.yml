@@ -66,8 +66,8 @@ jobs:
             ${{ secrets.DOCKERHUB_USERNAME || 'nobody' }}/${{ matrix.variant }}:nightly
             ${{ secrets.DOCKERHUB_USERNAME || 'nobody' }}/${{ matrix.variant }}:nightly-${{ env.DATESTAMP }}
             ${{ secrets.DOCKERHUB_USERNAME || 'nobody' }}/${{ matrix.variant }}:${{ env.MAILPILE_COMMIT }}
-            ghcr.io/${{ github.repository_owner }}/${{ matrix.variant }}:nightly
-            ghcr.io/${{ github.repository_owner }}/${{ matrix.variant }}:nightly-${{ env.DATESTAMP }}
-            ghcr.io/${{ github.repository_owner }}/${{ matrix.variant }}:${{ env.MAILPILE_COMMIT }}
+            ghcr.io/${{ secrets.REPOSITORY_OWNER_LC }}/${{ matrix.variant }}:nightly
+            ghcr.io/${{ secrets.REPOSITORY_OWNER_LC }}/${{ matrix.variant }}:nightly-${{ env.DATESTAMP }}
+            ghcr.io/${{ secrets.REPOSITORY_OWNER_LC }}/${{ matrix.variant }}:${{ env.MAILPILE_COMMIT }}
           platforms: ${{ env.PLATFORMS }}
           push: ${{ env.PUSH_IMAGE }}
